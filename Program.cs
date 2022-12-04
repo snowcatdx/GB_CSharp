@@ -46,17 +46,17 @@
 // 7 -> да
 // 1 -> нет
 
-Console.WriteLine("Введите номер дня недели");
-int dayNumber = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите номер дня недели");
+// int dayNumber = Convert.ToInt32(Console.ReadLine());
 
-if (dayNumber == 6 || dayNumber == 7)
-{
-    Console.WriteLine("Выходной");
-}
-else
-{
-    Console.WriteLine("не выходной или неправильная цифра");
-}
+// if (dayNumber == 6 || dayNumber == 7)
+// {
+//     Console.WriteLine("Выходной");
+// }
+// else
+// {
+//     Console.WriteLine("не выходной или неправильная цифра");
+// }
 
 
 
