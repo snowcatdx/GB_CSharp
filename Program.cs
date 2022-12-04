@@ -21,21 +21,41 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-int number = 645;
-int thirdDigit;
-if (number > 99 && number < 1000)
+// int number = 645;
+// int thirdDigit;
+// if (number > 99 && number < 1000)
+// {
+//     while (number > 999)
+//     {
+//         number = number / 1000;
+//     }
+//     thirdDigit = number % 10;
+//     Console.WriteLine(number);
+//     Console.WriteLine(thirdDigit);
+// }
+// else
+// {
+//     Console.WriteLine("третьей цифры нет");
+// }
+
+//-------------//
+
+// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+//Пример: 
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+
+Console.WriteLine("Введите номер дня недели");
+int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+if (dayNumber == 6 || dayNumber == 7)
 {
-    while (number > 999)
-    {
-        number = number / 1000;
-    }
-    thirdDigit = number % 10;
-    Console.WriteLine(number);
-    Console.WriteLine(thirdDigit);
+    Console.WriteLine("Выходной");
 }
 else
 {
-    Console.WriteLine("третьей цифры нет");
+    Console.WriteLine("не выходной или неправильная цифра");
 }
 
 
