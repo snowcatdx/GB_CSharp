@@ -20,23 +20,26 @@
 // 645 -> 5
 // 78 -> третьей цифры нет
 // 32679 -> 6
-
-// int number = 645;
-// int thirdDigit;
-// if (number > 99 && number < 1000)
-// {
-//     while (number > 999)
-//     {
-//         number = number / 1000;
-//     }
-//     thirdDigit = number % 10;
-//     Console.WriteLine(number);
-//     Console.WriteLine(thirdDigit);
-// }
-// else
-// {
-//     Console.WriteLine("третьей цифры нет");
-// }
+int number = 32679;
+int thirdDigit;
+if (number < 100)
+{
+    Console.WriteLine("Третьей цифры нет");
+}
+if (number > 100 && number < 1000)
+{
+    thirdDigit = number % 10;
+    Console.WriteLine($"Третья цифра: {thirdDigit}");
+}
+if (number > 999)
+{
+    while (number > 999)
+    {
+        number = number / 10;        
+    }
+    thirdDigit = number % 10;
+    Console.WriteLine($"Третья цифра: {thirdDigit}");
+}
 
 //-------------//
 
