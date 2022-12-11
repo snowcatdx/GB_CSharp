@@ -25,7 +25,24 @@ Console.WriteLine(Math.Pow(3, 7)); */
 // 82 -> 10
 // 9012 -> 12
 
+/* int MySum(int number)
+{
+    int digit = number % 10;
+    int result = digit;
+
+    while (number != 0)
+    {      
+        number /= 10; 
+        digit = number % 10;  
+        result += digit;
+    }
+
+    return result;
+}
+Console.WriteLine(MySum(161616)); */
+
 // Задача 29: 
 // Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
+
