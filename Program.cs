@@ -46,3 +46,17 @@ Console.WriteLine(MySum(161616)); */
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
+int[] getArray()
+{
+    int[] result = new int[8];
+
+    for (int i = 0; i < result.Length; i++)
+    {
+        result[i] = new Random().Next(1, 99);
+    }
+
+    return result;
+}
+
+string str = string.Join(", ", getArray());
+Console.Write($"[{str}]");
