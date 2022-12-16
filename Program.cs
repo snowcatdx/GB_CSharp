@@ -1,5 +1,34 @@
 ﻿//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 //[345, 897, 568, 234] -> 2
+int[] getArray(int arrLength)
+{
+    int[] result = new int[arrLength];
+    for (int i = 0; i < arrLength; i++)
+    {
+        result[i] = new Random().Next(100, 999);
+    }
+
+    return result;
+}
+
+int countEven(int[] array)
+{
+    int result = 0;
+    foreach (var item in array)
+    {
+        if (item % 2 == 0)
+        {
+            result++;
+        }
+    }
+
+    return result;
+}
+
+int[] myArr = getArray(9);
+
+Console.WriteLine($"Это сгенерированный массив чисел: {String.Join(", ", myArr)}");
+Console.WriteLine($"Это кол-во четных чисел в нем: {countEven(myArr)}");
 
 //Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 //[3, 7, 23, 12] -> 19
