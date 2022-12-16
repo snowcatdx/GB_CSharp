@@ -69,6 +69,45 @@ Console.WriteLine($"Это сумма нечетных чисел в нем: {su
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
 
+/* double[] getArray(int arrLength)
+{
+    double[] result = new double[arrLength];
+    for (int i = 0; i < arrLength; i++)
+    {
+        result[i] = new Random().Next(0, 99);
+    }
+
+    return result;
+}
+
+double diffMinMax(double[] array)
+{
+    double result = 0;
+    double minNumber = array[0];
+    double maxNumber = array[0];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < minNumber)
+        {
+            minNumber = array[i];
+        }
+        if (array[i] > maxNumber)
+        {
+            maxNumber = array[i];
+        }
+    }
+
+    result = maxNumber - minNumber;
+
+    return result;
+}
+
+double[] myArr = getArray(5);
+
+Console.WriteLine($"Это сгенерированный массив чисел: {String.Join(", ", myArr)}");
+Console.WriteLine($"Это разницa между максимальным и минимальным элементом массива: {diffMinMax(myArr)}"); */
+
 // Задача 37 со звездочкой, дополнительная: Найдите произведение пар чисел в одномерном массиве. 
 // Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
 // [1 2 3 4 5] -> 5 8 3
