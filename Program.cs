@@ -112,3 +112,13 @@ Console.WriteLine($"Это разницa между максимальным и 
 // Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
 // [1 2 3 4 5] -> 5 8 3
 // [6 7 3 6] -> 36 21
+
+int[] myArr = {1,2,3,4,5}; //{6,7,3,6} {1,2,3,4,5}
+
+int lastIndex = myArr.Length - 1;
+
+for (int i = 0; i < lastIndex; i++)
+{
+    int result = myArr[i] * myArr[lastIndex - i];
+    Console.WriteLine(result);   
+}
