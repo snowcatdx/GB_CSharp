@@ -1,62 +1,124 @@
-﻿// Задача 25:
-// Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-// 3, 5 -> 243 (3⁵)
-// 2, 4 -> 16
-
-/* int MyPow(int a, int b)
+﻿//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+//[345, 897, 568, 234] -> 2
+/* int[] getArray(int arrLength)
 {
-    int result = a;
-
-    for (int i = 1; i < b; i++)
+    int[] result = new int[arrLength];
+    for (int i = 0; i < arrLength; i++)
     {
-        result *= a;
+        result[i] = new Random().Next(100, 999);
     }
 
     return result;
 }
 
-Console.WriteLine(MyPow(3, 7));
-//Проверка
-Console.WriteLine(Math.Pow(3, 7)); */
-
-// Задача 27: 
-// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-// 452 -> 11
-// 82 -> 10
-// 9012 -> 12
-
-/* int MySum(int number)
+int countEven(int[] array)
 {
-    int digit = number % 10;
-    int result = digit;
-
-    while (number != 0)
-    {      
-        number /= 10; 
-        digit = number % 10;  
-        result += digit;
-    }
-
-    return result;
-}
-Console.WriteLine(MySum(161616)); */
-
-// Задача 29: 
-// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
-// 6, 1, 33 -> [6, 1, 33]
-
-int[] getArray()
-{
-    int[] result = new int[8];
-
-    for (int i = 0; i < result.Length; i++)
+    int result = 0;
+    foreach (var item in array)
     {
-        result[i] = new Random().Next(1, 99);
+        if (item % 2 == 0)
+        {
+            result++;
+        }
     }
 
     return result;
 }
 
-string str = string.Join(", ", getArray());
-Console.Write($"[{str}]");
+int[] myArr = getArray(9);
+
+Console.WriteLine($"Это сгенерированный массив чисел: {String.Join(", ", myArr)}");
+Console.WriteLine($"Это кол-во четных чисел в нем: {countEven(myArr)}"); */
+
+//Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+//[3, 7, 23, 12] -> 19
+//[-4, -6, 89, 6] -> 0
+
+ /* int[] getArray(int arrLength)
+{
+    int[] result = new int[arrLength];
+    for (int i = 0; i < arrLength; i++)
+    {
+        result[i] = new Random().Next(-99, 99);
+    }
+
+    return result;
+}
+
+int sumOdd(int[] array)
+{
+    int result = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i % 2 != 0)
+        {
+            Console.WriteLine(i);
+            result += array[i];
+        }
+    }
+
+    return result;
+}
+
+int[] myArr = getArray(5);
+
+Console.WriteLine($"Это сгенерированный массив чисел: {String.Join(", ", myArr)}");
+Console.WriteLine($"Это сумма нечетных чисел в нем: {sumOdd(myArr)}"); */
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+/* double[] getArray(int arrLength)
+{
+    double[] result = new double[arrLength];
+    for (int i = 0; i < arrLength; i++)
+    {
+        result[i] = new Random().Next(0, 99);
+    }
+
+    return result;
+}
+
+double diffMinMax(double[] array)
+{
+    double result = 0;
+    double minNumber = array[0];
+    double maxNumber = array[0];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < minNumber)
+        {
+            minNumber = array[i];
+        }
+        if (array[i] > maxNumber)
+        {
+            maxNumber = array[i];
+        }
+    }
+
+    result = maxNumber - minNumber;
+
+    return result;
+}
+
+double[] myArr = getArray(5);
+
+Console.WriteLine($"Это сгенерированный массив чисел: {String.Join(", ", myArr)}");
+Console.WriteLine($"Это разницa между максимальным и минимальным элементом массива: {diffMinMax(myArr)}"); */
+
+// Задача 37 со звездочкой, дополнительная: Найдите произведение пар чисел в одномерном массиве. 
+// Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
+// [1 2 3 4 5] -> 5 8 3
+// [6 7 3 6] -> 36 21
+
+int[] myArr = {1,2,3,4,5}; //{6,7,3,6} {1,2,3,4,5}
+
+int lastIndex = myArr.Length - 1;
+
+for (int i = 0; i < lastIndex; i++)
+{
+    int result = myArr[i] * myArr[lastIndex - i];
+    Console.WriteLine(result);   
+}
