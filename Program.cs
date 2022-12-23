@@ -1,124 +1,52 @@
-﻿//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
-//[345, 897, 568, 234] -> 2
-/* int[] getArray(int arrLength)
+﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 3
+
+/* Console.WriteLine("Введите числа в строку через пробел:");
+string userInput = Console.ReadLine();
+string[] array = userInput.Split(' ');
+int result = 0;
+
+foreach (var item in array)
 {
-    int[] result = new int[arrLength];
-    for (int i = 0; i < arrLength; i++)
+    int number = Convert.ToInt32(item);
+
+    if (number > 0)
     {
-        result[i] = new Random().Next(100, 999);
+        result++;
     }
+}
+Console.WriteLine($"Пользователь ввел {result} положительных чисел отличных от нуля"); */
 
-    return result;
+// Задача 42: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+/* Console.Write("Введите b1");
+Console.Write("Введите k1");
+Console.Write("Введите b2");
+Console.Write("Введите k2");
+
+int b1 = Convert.ToInt32(Console.ReadLine());
+int k1 = Convert.ToInt32(Console.ReadLine());
+int b2 = Convert.ToInt32(Console.ReadLine());
+int k2 = Convert.ToInt32(Console.ReadLine()); */
+
+
+
+// Задача 43 (ДОП, по желанию, на 5 нужно сделать 2 задачки): Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+// 45 -> 101101
+// 3 -> 11
+// 2 -> 10
+
+Console.WriteLine("Введите десятичное число:");
+int number = Convert.ToInt32(Console.ReadLine());
+int rest;
+string result = string.Empty;
+while (number > 0)
+{    
+    rest = number % 2;
+    number = number / 2;
+    result = rest.ToString() + result;
 }
 
-int countEven(int[] array)
-{
-    int result = 0;
-    foreach (var item in array)
-    {
-        if (item % 2 == 0)
-        {
-            result++;
-        }
-    }
-
-    return result;
-}
-
-int[] myArr = getArray(9);
-
-Console.WriteLine($"Это сгенерированный массив чисел: {String.Join(", ", myArr)}");
-Console.WriteLine($"Это кол-во четных чисел в нем: {countEven(myArr)}"); */
-
-//Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-//[3, 7, 23, 12] -> 19
-//[-4, -6, 89, 6] -> 0
-
- /* int[] getArray(int arrLength)
-{
-    int[] result = new int[arrLength];
-    for (int i = 0; i < arrLength; i++)
-    {
-        result[i] = new Random().Next(-99, 99);
-    }
-
-    return result;
-}
-
-int sumOdd(int[] array)
-{
-    int result = 0;
-
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (i % 2 != 0)
-        {
-            Console.WriteLine(i);
-            result += array[i];
-        }
-    }
-
-    return result;
-}
-
-int[] myArr = getArray(5);
-
-Console.WriteLine($"Это сгенерированный массив чисел: {String.Join(", ", myArr)}");
-Console.WriteLine($"Это сумма нечетных чисел в нем: {sumOdd(myArr)}"); */
-
-// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-// [3 7 22 2 78] -> 76
-
-/* double[] getArray(int arrLength)
-{
-    double[] result = new double[arrLength];
-    for (int i = 0; i < arrLength; i++)
-    {
-        result[i] = new Random().Next(0, 99);
-    }
-
-    return result;
-}
-
-double diffMinMax(double[] array)
-{
-    double result = 0;
-    double minNumber = array[0];
-    double maxNumber = array[0];
-
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] < minNumber)
-        {
-            minNumber = array[i];
-        }
-        if (array[i] > maxNumber)
-        {
-            maxNumber = array[i];
-        }
-    }
-
-    result = maxNumber - minNumber;
-
-    return result;
-}
-
-double[] myArr = getArray(5);
-
-Console.WriteLine($"Это сгенерированный массив чисел: {String.Join(", ", myArr)}");
-Console.WriteLine($"Это разницa между максимальным и минимальным элементом массива: {diffMinMax(myArr)}"); */
-
-// Задача 37 со звездочкой, дополнительная: Найдите произведение пар чисел в одномерном массиве. 
-// Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
-// [1 2 3 4 5] -> 5 8 3
-// [6 7 3 6] -> 36 21
-
-int[] myArr = {1,2,3,4,5}; //{6,7,3,6} {1,2,3,4,5}
-
-int lastIndex = myArr.Length - 1;
-
-for (int i = 0; i < lastIndex; i++)
-{
-    int result = myArr[i] * myArr[lastIndex - i];
-    Console.WriteLine(result);   
-}
+Console.Write(result);
